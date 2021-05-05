@@ -29,12 +29,34 @@ namespace StepTestApp
 
         private void txtBoxAge_TextChanged(object sender, EventArgs e)
         {
-            float age = (float)double.Parse(txtBoxAge.Text);
-            float MaxHr = age + 220;
-            lblMaxHR.Text = MaxHr.ToString();
+            if (txtBoxAge.Text == "")
+            {
+                lblMaxHR.Text = "/";
+                lblHR.Text = "/";
+            }
+            else
+            {
+                float age = (float)double.Parse(txtBoxAge.Text);
+                double MaxHr = age + 220;
+                double Hr = MaxHr * 0.85;
+                lblMaxHR.Text = MaxHr.ToString();
+                lblHR.Text = Hr.ToString();
+                lblB1.Text = "b/min";
+                lblB2.Text = "b/min";
+            }
         }
 
         private void lblMaxHR_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }

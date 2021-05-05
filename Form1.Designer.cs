@@ -37,6 +37,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lblMaxHR = new System.Windows.Forms.Label();
             this.lblHR = new System.Windows.Forms.Label();
+            this.lblB1 = new System.Windows.Forms.Label();
+            this.lblB2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -114,9 +116,8 @@
             this.lblMaxHR.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMaxHR.Location = new System.Drawing.Point(375, 75);
             this.lblMaxHR.Name = "lblMaxHR";
-            this.lblMaxHR.Size = new System.Drawing.Size(13, 19);
+            this.lblMaxHR.Size = new System.Drawing.Size(0, 19);
             this.lblMaxHR.TabIndex = 7;
-            this.lblMaxHR.Text = " ";
             this.lblMaxHR.Click += new System.EventHandler(this.lblMaxHR_Click);
             // 
             // lblHR
@@ -125,9 +126,29 @@
             this.lblHR.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHR.Location = new System.Drawing.Point(375, 114);
             this.lblHR.Name = "lblHR";
-            this.lblHR.Size = new System.Drawing.Size(13, 19);
+            this.lblHR.Size = new System.Drawing.Size(0, 19);
             this.lblHR.TabIndex = 8;
-            this.lblHR.Text = " ";
+            // 
+            // lblB1
+            // 
+            this.lblB1.AutoSize = true;
+            this.lblB1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblB1.Location = new System.Drawing.Point(444, 75);
+            this.lblB1.Name = "lblB1";
+            this.lblB1.Size = new System.Drawing.Size(13, 19);
+            this.lblB1.TabIndex = 9;
+            this.lblB1.Text = " ";
+            this.lblB1.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // lblB2
+            // 
+            this.lblB2.AutoSize = true;
+            this.lblB2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblB2.Location = new System.Drawing.Point(444, 114);
+            this.lblB2.Name = "lblB2";
+            this.lblB2.Size = new System.Drawing.Size(13, 19);
+            this.lblB2.TabIndex = 10;
+            this.lblB2.Text = " ";
             // 
             // Form1
             // 
@@ -135,6 +156,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1065, 630);
+            this.Controls.Add(this.lblB2);
+            this.Controls.Add(this.lblB1);
             this.Controls.Add(this.lblHR);
             this.Controls.Add(this.lblMaxHR);
             this.Controls.Add(this.label5);
@@ -146,6 +169,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,6 +186,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblMaxHR;
         private System.Windows.Forms.Label lblHR;
+        private System.Windows.Forms.Label lblB1;
+        private System.Windows.Forms.Label lblB2;
     }
 }
 
