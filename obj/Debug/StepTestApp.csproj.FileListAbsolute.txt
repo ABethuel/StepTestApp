@@ -1,0 +1,10 @@
+C:\Users\adrie\OneDrive - ISEP\Cours\I2\S2 GLYNDWR\Applied programming\Assignment 2\StepTestApp\bin\Debug\StepTestApp.exe.config
+C:\Users\adrie\OneDrive - ISEP\Cours\I2\S2 GLYNDWR\Applied programming\Assignment 2\StepTestApp\bin\Debug\StepTestApp.exe
+C:\Users\adrie\OneDrive - ISEP\Cours\I2\S2 GLYNDWR\Applied programming\Assignment 2\StepTestApp\bin\Debug\StepTestApp.pdb
+C:\Users\adrie\OneDrive - ISEP\Cours\I2\S2 GLYNDWR\Applied programming\Assignment 2\StepTestApp\obj\Debug\StepTestApp.csprojAssemblyReference.cache
+C:\Users\adrie\OneDrive - ISEP\Cours\I2\S2 GLYNDWR\Applied programming\Assignment 2\StepTestApp\obj\Debug\StepTestApp.Properties.Resources.resources
+C:\Users\adrie\OneDrive - ISEP\Cours\I2\S2 GLYNDWR\Applied programming\Assignment 2\StepTestApp\obj\Debug\StepTestApp.csproj.GenerateResource.cache
+C:\Users\adrie\OneDrive - ISEP\Cours\I2\S2 GLYNDWR\Applied programming\Assignment 2\StepTestApp\obj\Debug\StepTestApp.csproj.CoreCompileInputs.cache
+C:\Users\adrie\OneDrive - ISEP\Cours\I2\S2 GLYNDWR\Applied programming\Assignment 2\StepTestApp\obj\Debug\StepTestApp.exe
+C:\Users\adrie\OneDrive - ISEP\Cours\I2\S2 GLYNDWR\Applied programming\Assignment 2\StepTestApp\obj\Debug\StepTestApp.pdb
+C:\Users\adrie\OneDrive - ISEP\Cours\I2\S2 GLYNDWR\Applied programming\Assignment 2\StepTestApp\obj\Debug\StepTestApp.Form1.resources
