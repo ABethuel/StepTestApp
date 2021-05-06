@@ -45,8 +45,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.grpBoxGender = new System.Windows.Forms.GroupBox();
-            this.radioButtonMale = new System.Windows.Forms.RadioButton();
             this.radioButtonFemale = new System.Windows.Forms.RadioButton();
+            this.radioButtonMale = new System.Windows.Forms.RadioButton();
             this.label9 = new System.Windows.Forms.Label();
             this.txtBoxLvl1 = new System.Windows.Forms.TextBox();
             this.txtBoxLvl2 = new System.Windows.Forms.TextBox();
@@ -57,7 +57,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txtBoxLvl5 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnValidate = new System.Windows.Forms.Button();
             this.grpBoxGender.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -232,19 +232,6 @@
             this.grpBoxGender.Text = "Gender";
             this.grpBoxGender.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // radioButtonMale
-            // 
-            this.radioButtonMale.AutoSize = true;
-            this.radioButtonMale.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonMale.Location = new System.Drawing.Point(15, 26);
-            this.radioButtonMale.Name = "radioButtonMale";
-            this.radioButtonMale.Size = new System.Drawing.Size(59, 20);
-            this.radioButtonMale.TabIndex = 0;
-            this.radioButtonMale.TabStop = true;
-            this.radioButtonMale.Text = "Male";
-            this.radioButtonMale.UseVisualStyleBackColor = true;
-            this.radioButtonMale.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged_1);
-            // 
             // radioButtonFemale
             // 
             this.radioButtonFemale.AutoSize = true;
@@ -258,6 +245,19 @@
             this.radioButtonFemale.UseVisualStyleBackColor = true;
             this.radioButtonFemale.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
+            // radioButtonMale
+            // 
+            this.radioButtonMale.AutoSize = true;
+            this.radioButtonMale.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonMale.Location = new System.Drawing.Point(15, 26);
+            this.radioButtonMale.Name = "radioButtonMale";
+            this.radioButtonMale.Size = new System.Drawing.Size(59, 20);
+            this.radioButtonMale.TabIndex = 0;
+            this.radioButtonMale.TabStop = true;
+            this.radioButtonMale.Text = "Male";
+            this.radioButtonMale.UseVisualStyleBackColor = true;
+            this.radioButtonMale.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged_1);
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -270,7 +270,7 @@
             // 
             // txtBoxLvl1
             // 
-            this.txtBoxLvl1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxLvl1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxLvl1.Location = new System.Drawing.Point(100, 192);
             this.txtBoxLvl1.Name = "txtBoxLvl1";
             this.txtBoxLvl1.Size = new System.Drawing.Size(50, 21);
@@ -353,16 +353,17 @@
             this.label13.TabIndex = 25;
             this.label13.Text = "Level 5 :";
             // 
-            // button1
+            // btnValidate
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(863, 188);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 30);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Validate";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnValidate.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnValidate.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnValidate.Location = new System.Drawing.Point(863, 188);
+            this.btnValidate.Name = "btnValidate";
+            this.btnValidate.Size = new System.Drawing.Size(128, 30);
+            this.btnValidate.TabIndex = 27;
+            this.btnValidate.Text = "Validate";
+            this.btnValidate.UseVisualStyleBackColor = false;
+            this.btnValidate.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -370,7 +371,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1080, 679);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnValidate);
             this.Controls.Add(this.txtBoxLvl5);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.txtBoxLvl4);
@@ -439,7 +440,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtBoxLvl5;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnValidate;
     }
 }
 

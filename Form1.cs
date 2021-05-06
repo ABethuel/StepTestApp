@@ -215,5 +215,17 @@ namespace StepTestApp
                 }
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if ((txtBoxAge.Text == "" | txtBoxName.Text == "" | comboBoxHeight.Text== "") | (!radioButtonFemale.Checked & !radioButtonMale.Checked))
+            {
+                MessageBox.Show("Please fill in all fields", "Empty Box", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("You did it");
+            }
+        }
     }
 }
