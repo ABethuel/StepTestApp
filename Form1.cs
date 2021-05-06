@@ -16,7 +16,6 @@ namespace StepTestApp
         {
             InitializeComponent();
         }
-
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -29,12 +28,32 @@ namespace StepTestApp
 
         private void txtBoxAge_TextChanged(object sender, EventArgs e)
         {
-            if (txtBoxAge.Text == "")
+            
+            try
+            {
+                float age = (float)double.Parse(txtBoxAge.Text);
+                double variable = Convert.ToDouble(age);
+                double MaxHr = age + 220;
+                double Hr = MaxHr * 0.85;
+                lblMaxHR.Text = MaxHr.ToString();
+                lblHR.Text = Hr.ToString();
+                lblB1.Text = "b/min";
+                lblB2.Text = "b/min";
+            }
+            catch
+            {
+                DialogResult errorString;
+                errorString = MessageBox.Show("Please enter correct value", "Warning error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblMaxHR.Text = "/";
+                lblHR.Text = "/";
+            }
+
+            /*if (txtBoxAge.Text == "")
             {
                 lblMaxHR.Text = "/";
                 lblHR.Text = "/";
             }
-            else
+            else 
             {
                 float age = (float)double.Parse(txtBoxAge.Text);
                 double MaxHr = age + 220;
@@ -43,7 +62,7 @@ namespace StepTestApp
                 lblHR.Text = Hr.ToString();
                 lblB1.Text = "b/min";
                 lblB2.Text = "b/min";
-            }
+            }*/
         }
 
         private void lblMaxHR_Click(object sender, EventArgs e)
@@ -57,6 +76,16 @@ namespace StepTestApp
         }
 
         private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

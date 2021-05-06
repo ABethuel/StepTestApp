@@ -39,6 +39,9 @@
             this.lblHR = new System.Windows.Forms.Label();
             this.lblB1 = new System.Windows.Forms.Label();
             this.lblB2 = new System.Windows.Forms.Label();
+            this.comboBoxHeight = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -150,12 +153,46 @@
             this.lblB2.TabIndex = 10;
             this.lblB2.Text = " ";
             // 
+            // comboBoxHeight
+            // 
+            this.comboBoxHeight.FormattingEnabled = true;
+            this.comboBoxHeight.Items.AddRange(new object[] {
+            "15cm",
+            "20cm",
+            "25cm"});
+            this.comboBoxHeight.Location = new System.Drawing.Point(701, 77);
+            this.comboBoxHeight.Name = "comboBoxHeight";
+            this.comboBoxHeight.Size = new System.Drawing.Size(113, 21);
+            this.comboBoxHeight.TabIndex = 11;
+            this.comboBoxHeight.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(569, 77);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(104, 19);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Step Height :";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(28, 170);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(0, 13);
+            this.label7.TabIndex = 13;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(1065, 630);
+            this.ClientSize = new System.Drawing.Size(1075, 672);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.comboBoxHeight);
             this.Controls.Add(this.lblB2);
             this.Controls.Add(this.lblB1);
             this.Controls.Add(this.lblHR);
@@ -188,6 +225,9 @@
         private System.Windows.Forms.Label lblHR;
         private System.Windows.Forms.Label lblB1;
         private System.Windows.Forms.Label lblB2;
+        private System.Windows.Forms.ComboBox comboBoxHeight;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }
 
