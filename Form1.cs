@@ -13,14 +13,27 @@ namespace StepTestApp
 {
     public partial class Form1 : Form
     {
-        float age;
-        double MaxHr;
-        double Hr;
-        float lvl1;
-        float lvl2;
-        float lvl3;
-        float lvl4;
-        float lvl5;
+        private float age;
+        private double MaxHr;
+        private double Hr;
+        private string stepHeight;
+
+        private float lvl1;
+        private float lvl2;
+        private float lvl3;
+        private float lvl4;
+        private float lvl5;
+
+        private float x1;
+        private float x2;
+        private float x3;
+        private float x4;
+        private float x5;
+
+        private float m;
+        private float Xmean;
+        private float Ymean;
+        private float b;
 
         public Form1()
         {
@@ -58,7 +71,7 @@ namespace StepTestApp
                 else
                 {
                     DialogResult errorString;
-                    errorString = MessageBox.Show("Please enter a correct value", "Warning error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    errorString = MessageBox.Show("Please enter a correct value", getYmean().ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
                     lblMaxHR.Text = "/";
                     lblHR.Text = "/";
                     txtBoxAge.Text = "";
@@ -228,26 +241,85 @@ namespace StepTestApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if ((txtBoxAge.Text == "" | txtBoxName.Text == "" | comboBoxHeight.Text== "") | (!radioButtonFemale.Checked & !radioButtonMale.Checked))
+            if ((txtBoxAge.Text == "" | txtBoxName.Text == "" | getStepHeight() == "") | (!radioButtonFemale.Checked & !radioButtonMale.Checked))
             {
                 MessageBox.Show("Please fill in all fields", "Empty Box", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
+                getValueXAxis();
+                chartDataStep.Titles.Add("Results of the test");
+                chartDataStep.ChartAreas["ChartArea1"].AxisY.Title = @"Heart Rate (b/min)";
+                chartDataStep.ChartAreas["ChartArea1"].AxisX.Title = @"Aerobic Capcaity (mls02/kg/min)";
+
                 chartDataStep.Series["Heart Rate"].ChartType = SeriesChartType.Line;
                 chartDataStep.Series["Heart Rate"].Color = Color.Aquamarine;
                 chartDataStep.Series["Heart Rate"].BorderWidth = 3;
-                chartDataStep.Series["Heart Rate1"].Points.AddXY(20, lvl1);
-                chartDataStep.Series["Heart Rate"].Points.AddXY(30, lvl2);
-                chartDataStep.Series["Heart Rate"].Points.AddXY(50, lvl3);
-                chartDataStep.Series["Heart Rate"].Points.AddXY(60, lvl4);
-                chartDataStep.Series["Heart Rate"].Points.AddXY(70, lvl5);
+                chartDataStep.Series["Heart Rate"].Points.AddXY(x1, lvl1);
+                chartDataStep.Series["Heart Rate"].Points.AddXY(x2, lvl2);
+                chartDataStep.Series["Heart Rate"].Points.AddXY(x3, lvl3);
+                chartDataStep.Series["Heart Rate"].Points.AddXY(x4, lvl4);
+                chartDataStep.Series["Heart Rate"].Points.AddXY(x5, lvl5);
+                btnValidate.Enabled = false;
             }
         }
 
         private void chartDataStep_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private string getStepHeight()
+        {
+            stepHeight = comboBoxHeight.Text;
+            return stepHeight;
+        }
+        
+        private void getXmean()
+        {
+
+        }
+
+        private float getYmean()
+        {
+            Ymean = (lvl1 + lvl2 + lvl3 + lvl4 + lvl5) / 5;
+            return Ymean;
+        }
+
+        private void getValueXAxis()
+        {
+            if (getStepHeight() == "15cm")
+            {
+                x1 = 11;
+                x2 = 14;
+                x3 = 18;
+                x4 = 21;
+                x5 = 25;
+            }
+            else if (getStepHeight() == "20cm")
+            {
+                x1 = 12;
+                x2 = 17;
+                x3 = 21;
+                x4 = 25;
+                x5 = 29;
+            }
+            else if (getStepHeight() == "25cm")
+            {
+                x1 = 14;
+                x2 = 19;
+                x3 = 24;
+                x4 = 28;
+                x5 = 33;
+            }
+            else if (getStepHeight()== "30cm")
+            {
+                x1 = 16;
+                x2 = 21;
+                x3 = 27;
+                x4 = 32;
+                x5 = 37;
+            }
         }
     }
 }

@@ -31,6 +31,7 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBoxName = new System.Windows.Forms.TextBox();
@@ -62,6 +63,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.btnValidate = new System.Windows.Forms.Button();
             this.chartDataStep = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
             this.grpBoxGender.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartDataStep)).BeginInit();
             this.SuspendLayout();
@@ -389,6 +391,8 @@
             this.chartDataStep.Size = new System.Drawing.Size(681, 384);
             this.chartDataStep.TabIndex = 28;
             this.chartDataStep.Text = "Yes";
+            title1.Name = "Results of the test";
+            this.chartDataStep.Titles.Add(title1);
             this.chartDataStep.Click += new System.EventHandler(this.chartDataStep_Click);
             // 
             // Form1
@@ -470,6 +474,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btnValidate;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartDataStep;
+        private System.DirectoryServices.DirectoryEntry directoryEntry1;
     }
 }
 
