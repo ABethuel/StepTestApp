@@ -7,11 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace StepTestApp
 {
     public partial class Form1 : Form
     {
+        float age;
+        double MaxHr;
+        double Hr;
+        float lvl1;
+        float lvl2;
+        float lvl3;
+        float lvl4;
+        float lvl5;
+
         public Form1()
         {
             InitializeComponent();
@@ -30,9 +40,9 @@ namespace StepTestApp
         {
             try
             {
-                float age = (float)double.Parse(txtBoxAge.Text);
-                double MaxHr = age + 220;
-                double Hr = MaxHr * 0.85;
+                age = (float)double.Parse(txtBoxAge.Text);
+                MaxHr = age + 220;
+                Hr = MaxHr * 0.85;
                 lblMaxHR.Text = MaxHr.ToString();
                 lblHR.Text = Hr.ToString();
                 lblB1.Text = "b/min";
@@ -115,7 +125,7 @@ namespace StepTestApp
         {
             try
             {
-                float lvl1 = (float)double.Parse(txtBoxLvl1.Text);
+                lvl1 = (float)double.Parse(txtBoxLvl1.Text);
             }
             catch
             {
@@ -136,7 +146,7 @@ namespace StepTestApp
         {
             try
             {
-                float lvl2 = (float)double.Parse(txtBoxLvl2.Text);
+                lvl2 = (float)double.Parse(txtBoxLvl2.Text);
             }
             catch
             {
@@ -157,7 +167,7 @@ namespace StepTestApp
         {
             try
             {
-                float lvl3 = (float)double.Parse(txtBoxLvl3.Text);
+                lvl3 = (float)double.Parse(txtBoxLvl3.Text);
             }
             catch
             {
@@ -178,7 +188,7 @@ namespace StepTestApp
         {
             try
             {
-                float lvl4 = (float)double.Parse(txtBoxLvl4.Text);
+                lvl4 = (float)double.Parse(txtBoxLvl4.Text);
             }
             catch
             {
@@ -199,7 +209,7 @@ namespace StepTestApp
         {
             try
             {
-                float lvl5 = (float)double.Parse(txtBoxLvl5.Text);
+                lvl5 = (float)double.Parse(txtBoxLvl5.Text);
             }
             catch
             {
@@ -224,8 +234,20 @@ namespace StepTestApp
             }
             else
             {
-                MessageBox.Show("You did it");
+                chartDataStep.Series["Heart Rate"].ChartType = SeriesChartType.Line;
+                chartDataStep.Series["Heart Rate"].Color = Color.Aquamarine;
+                chartDataStep.Series["Heart Rate"].BorderWidth = 3;
+                chartDataStep.Series["Heart Rate1"].Points.AddXY(20, lvl1);
+                chartDataStep.Series["Heart Rate"].Points.AddXY(30, lvl2);
+                chartDataStep.Series["Heart Rate"].Points.AddXY(50, lvl3);
+                chartDataStep.Series["Heart Rate"].Points.AddXY(60, lvl4);
+                chartDataStep.Series["Heart Rate"].Points.AddXY(70, lvl5);
             }
+        }
+
+        private void chartDataStep_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

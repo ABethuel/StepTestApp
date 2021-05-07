@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBoxName = new System.Windows.Forms.TextBox();
@@ -58,7 +61,9 @@
             this.txtBoxLvl5 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.btnValidate = new System.Windows.Forms.Button();
+            this.chartDataStep = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.grpBoxGender.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartDataStep)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -365,12 +370,34 @@
             this.btnValidate.UseVisualStyleBackColor = false;
             this.btnValidate.Click += new System.EventHandler(this.button1_Click);
             // 
+            // chartDataStep
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chartDataStep.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartDataStep.Legends.Add(legend1);
+            this.chartDataStep.Location = new System.Drawing.Point(219, 241);
+            this.chartDataStep.Name = "chartDataStep";
+            series1.ChartArea = "ChartArea1";
+            series1.IsValueShownAsLabel = true;
+            series1.LabelBackColor = System.Drawing.SystemColors.ActiveBorder;
+            series1.LabelBorderColor = System.Drawing.SystemColors.ActiveBorder;
+            series1.LabelForeColor = System.Drawing.Color.Bisque;
+            series1.Legend = "Legend1";
+            series1.Name = "Heart Rate";
+            this.chartDataStep.Series.Add(series1);
+            this.chartDataStep.Size = new System.Drawing.Size(681, 384);
+            this.chartDataStep.TabIndex = 28;
+            this.chartDataStep.Text = "Yes";
+            this.chartDataStep.Click += new System.EventHandler(this.chartDataStep_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(1080, 679);
+            this.ClientSize = new System.Drawing.Size(1100, 717);
+            this.Controls.Add(this.chartDataStep);
             this.Controls.Add(this.btnValidate);
             this.Controls.Add(this.txtBoxLvl5);
             this.Controls.Add(this.label13);
@@ -404,6 +431,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.grpBoxGender.ResumeLayout(false);
             this.grpBoxGender.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartDataStep)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -441,6 +469,7 @@
         private System.Windows.Forms.TextBox txtBoxLvl5;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btnValidate;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartDataStep;
     }
 }
 
