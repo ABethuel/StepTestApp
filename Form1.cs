@@ -35,6 +35,11 @@ namespace StepTestApp
         private float Ymean;
         private float b;
 
+        private List<float> ListValues = new List<float>();
+        private List<float> ListXaxis = new List<float>();
+
+        private int n = 0;
+
         public Form1()
         {
             InitializeComponent();
@@ -54,7 +59,7 @@ namespace StepTestApp
             try
             {
                 age = (float)double.Parse(txtBoxAge.Text);
-                MaxHr = age + 220;
+                MaxHr = 220 - age;
                 Hr = MaxHr * 0.85;
                 lblMaxHR.Text = MaxHr.ToString();
                 lblHR.Text = Hr.ToString();
@@ -71,7 +76,7 @@ namespace StepTestApp
                 else
                 {
                     DialogResult errorString;
-                    errorString = MessageBox.Show("Please enter a correct value", getYmean().ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    errorString = MessageBox.Show("Please enter a correct value", "Error String", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     lblMaxHR.Text = "/";
                     lblHR.Text = "/";
                     txtBoxAge.Text = "";
@@ -248,18 +253,19 @@ namespace StepTestApp
             else
             {
                 getValueXAxis();
+                getValuesList();
                 chartDataStep.Titles.Add("Results of the test");
                 chartDataStep.ChartAreas["ChartArea1"].AxisY.Title = @"Heart Rate (b/min)";
                 chartDataStep.ChartAreas["ChartArea1"].AxisX.Title = @"Aerobic Capcaity (mls02/kg/min)";
-
                 chartDataStep.Series["Heart Rate"].ChartType = SeriesChartType.Line;
                 chartDataStep.Series["Heart Rate"].Color = Color.Aquamarine;
                 chartDataStep.Series["Heart Rate"].BorderWidth = 3;
-                chartDataStep.Series["Heart Rate"].Points.AddXY(x1, lvl1);
-                chartDataStep.Series["Heart Rate"].Points.AddXY(x2, lvl2);
-                chartDataStep.Series["Heart Rate"].Points.AddXY(x3, lvl3);
-                chartDataStep.Series["Heart Rate"].Points.AddXY(x4, lvl4);
-                chartDataStep.Series["Heart Rate"].Points.AddXY(x5, lvl5);
+
+                for (int i = 0; i < n ; i++)
+                {
+                    chartDataStep.Series["Heart Rate"].Points.AddXY(ListXaxis[i], ListValues[i] );
+                }
+
                 btnValidate.Enabled = false;
             }
         }
@@ -275,9 +281,10 @@ namespace StepTestApp
             return stepHeight;
         }
         
-        private void getXmean()
+        private float getXmean()
         {
-
+            Xmean = (x1 + x2 + x3 + x4 + x5);
+            return Xmean;
         }
 
         private float getYmean()
@@ -319,6 +326,89 @@ namespace StepTestApp
                 x3 = 27;
                 x4 = 32;
                 x5 = 37;
+            }
+        }
+
+        private void getValuesList()
+        {
+            if (lvl1 >= 0.50*MaxHr & lvl1 <= 0.85*MaxHr)
+            {
+                ListValues.Add(lvl1);
+                ListXaxis.Add(x1);
+                txtBoxLvl1.ForeColor = Color.Green;
+                n += 1;
+            }
+            else if (lvl1 < 0.50 * MaxHr)
+            {
+                txtBoxLvl1.ForeColor = Color.Red;
+            }
+            else
+            {
+                txtBoxLvl1.ForeColor = Color.Blue;
+            }
+
+            if (lvl2 >= 0.50 * MaxHr & lvl2 <= 0.85 * MaxHr)
+            {
+                ListValues.Add(lvl2);
+                ListXaxis.Add(x2);
+                txtBoxLvl2.ForeColor = Color.Green;
+                n += 1;
+            }
+            else if (lvl2 < 0.50 * MaxHr)
+            {
+                txtBoxLvl2.ForeColor = Color.Red;
+            }
+            else
+            {
+                txtBoxLvl2.ForeColor = Color.Blue;
+            }
+
+            if (lvl3 >= 0.50 * MaxHr & lvl3 <= 0.85 * MaxHr)
+            {
+                ListValues.Add(lvl3);
+                ListXaxis.Add(x3);
+                txtBoxLvl3.ForeColor = Color.Green;
+                n += 1;
+            }
+            else if (lvl3 < 0.50 * MaxHr)
+            {
+                txtBoxLvl3.ForeColor = Color.Red;
+            }
+            else
+            {
+                txtBoxLvl3.ForeColor = Color.Blue;
+            }
+
+            if (lvl4 >= 0.50 * MaxHr & lvl4 <= 0.85 * MaxHr)
+            {
+                ListValues.Add(lvl4);
+                ListXaxis.Add(x4);
+                txtBoxLvl4.ForeColor = Color.Green;
+                n += 1;
+            }
+            else if (lvl4 < 0.50 * MaxHr)
+            {
+                txtBoxLvl4.ForeColor = Color.Red;
+            }
+            else
+            {
+                txtBoxLvl4.ForeColor = Color.Blue;
+            }
+
+            if (lvl5 >= 0.50 * MaxHr & lvl5 <= 0.85 * MaxHr)
+            {
+                ListValues.Add(lvl5);
+                ListXaxis.Add(x5);
+                txtBoxLvl5.ForeColor = Color.Green;
+                n += 1;
+            }
+            else if (lvl5 < 0.50 * MaxHr)
+            {
+                txtBoxLvl5.ForeColor = Color.Red;
+            }
+            else
+            {
+                txtBoxLvl5.ForeColor = Color.Blue;
             }
         }
     }
