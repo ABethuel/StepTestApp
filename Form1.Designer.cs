@@ -64,6 +64,7 @@
             this.btnValidate = new System.Windows.Forms.Button();
             this.chartDataStep = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.lblAerobicCapacity = new System.Windows.Forms.Label();
+            this.lblRating = new System.Windows.Forms.Label();
             this.grpBoxGender.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartDataStep)).BeginInit();
             this.SuspendLayout();
@@ -406,12 +407,23 @@
             this.lblAerobicCapacity.Text = " ";
             this.lblAerobicCapacity.Click += new System.EventHandler(this.lblAerobicCapacity_Click);
             // 
+            // lblRating
+            // 
+            this.lblRating.AutoSize = true;
+            this.lblRating.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRating.Location = new System.Drawing.Point(215, 675);
+            this.lblRating.Name = "lblRating";
+            this.lblRating.Size = new System.Drawing.Size(13, 19);
+            this.lblRating.TabIndex = 30;
+            this.lblRating.Text = " ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1100, 717);
+            this.Controls.Add(this.lblRating);
             this.Controls.Add(this.lblAerobicCapacity);
             this.Controls.Add(this.chartDataStep);
             this.Controls.Add(this.btnValidate);
@@ -487,6 +499,7 @@
         private System.Windows.Forms.Button btnValidate;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartDataStep;
         private System.Windows.Forms.Label lblAerobicCapacity;
+        private System.Windows.Forms.Label lblRating;
     }
 }
 

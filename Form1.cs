@@ -40,6 +40,7 @@ namespace StepTestApp
         private List<float> ListXaxis = new List<float>();
 
         private float aerobic_capacity;
+        private string rating;
 
         public Form1()
         {
@@ -284,7 +285,8 @@ namespace StepTestApp
 
                 btnValidate.Enabled = false;
 
-                lblAerobicCapacity.Text = "Aerobic capacity :  " + getAerobicCapacity().ToString() + "  mls02/kg/min";
+                lblAerobicCapacity.Text = "Aerobic capacity :   " + getAerobicCapacity().ToString() + "  mls02/kg/min";
+                getRating();
             }
         }
 
@@ -468,5 +470,373 @@ namespace StepTestApp
             }
         }
 
+        private void getRating()
+        {
+            if (radioButtonMale.Checked)
+            {
+                if (age >= 15 & age <=19)
+                {
+                    if (aerobic_capacity >= 60)
+                    {
+                        rating = "Excellent";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity >= 48 & aerobic_capacity <= 59)
+                    {
+                        rating = "Good";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity >= 39 &  aerobic_capacity <= 47)
+                    {
+                        rating = "Average";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity >= 30 & aerobic_capacity <= 38)
+                    {
+                        rating = "Below Average";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity < 30)
+                    {
+                        rating = "Poor";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                }
+
+                else if (age >= 20 & age <= 29)
+                {
+                    if (aerobic_capacity >= 55)
+                    {
+                        rating = "Excellent";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity >= 44 & aerobic_capacity <= 54)
+                    {
+                        rating = "Good";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity >= 35 & aerobic_capacity <= 43)
+                    {
+                        rating = "Average";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity >= 28 & aerobic_capacity <= 34)
+                    {
+                        rating = "Below Average";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity < 28)
+                    {
+                        rating = "Poor";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                }
+
+                else if (age >= 30 & age <= 39)
+                {
+                    if (aerobic_capacity >= 50)
+                    {
+                        rating = "Excellent";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity >= 40 & aerobic_capacity <= 49)
+                    {
+                        rating = "Good";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity >= 34 & aerobic_capacity <= 39)
+                    {
+                        rating = "Average";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity >= 26 & aerobic_capacity <= 33)
+                    {
+                        rating = "Below Average";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity < 26)
+                    {
+                        rating = "Poor";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                }
+
+                else if (age >= 40 & age <= 49)
+                {
+                    if (aerobic_capacity >= 46)
+                    {
+                        rating = "Excellent";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity >= 37 & aerobic_capacity <= 45)
+                    {
+                        rating = "Good";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity >= 32 & aerobic_capacity <= 36)
+                    {
+                        rating = "Average";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity >= 25 & aerobic_capacity <= 31)
+                    {
+                        rating = "Below Average";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity < 25)
+                    {
+                        rating = "Poor";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                }
+
+                else if (age >= 50 & age <= 59)
+                {
+                    if (aerobic_capacity >= 44)
+                    {
+                        rating = "Excellent";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity >= 35 & aerobic_capacity <= 43)
+                    {
+                        rating = "Good";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity >= 29 & aerobic_capacity <= 34)
+                    {
+                        rating = "Average";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity >= 23 & aerobic_capacity <= 28)
+                    {
+                        rating = "Below Average";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity < 23)
+                    {
+                        rating = "Poor";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                }
+
+                else if (age >= 60 & age <= 65)
+                {
+                    if (aerobic_capacity >= 40)
+                    {
+                        rating = "Excellent";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity >= 33 & aerobic_capacity <= 39)
+                    {
+                        rating = "Good";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity >= 25 & aerobic_capacity <= 32)
+                    {
+                        rating = "Average";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity >= 20 & aerobic_capacity <= 24)
+                    {
+                        rating = "Below Average";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity < 20)
+                    {
+                        rating = "Poor";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                }
+
+                else
+                {
+                    rating = "/";
+                    lblRating.Text = "Fitness Rating :  " + rating;
+                }
+            }
+            
+            if (radioButtonFemale.Checked)
+            {
+                if (age >= 15 & age <= 19)
+                {
+                    if (aerobic_capacity >= 55)
+                    {
+                        rating = "Excellent";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity >= 44 & aerobic_capacity <= 54)
+                    {
+                        rating = "Good";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity >= 36 & aerobic_capacity <= 43)
+                    {
+                        rating = "Average";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity >= 29 & aerobic_capacity <= 35)
+                    {
+                        rating = "Below Average";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity < 29)
+                    {
+                        rating = "Poor";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                }
+
+                else if (age >= 20 & age <= 29)
+                {
+                    if (aerobic_capacity >= 50)
+                    {
+                        rating = "Excellent";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity >= 40 & aerobic_capacity <= 49)
+                    {
+                        rating = "Good";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity >= 32 & aerobic_capacity <= 39)
+                    {
+                        rating = "Average";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity >= 27 & aerobic_capacity <= 31)
+                    {
+                        rating = "Below Average";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity < 27)
+                    {
+                        rating = "Poor";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                }
+
+                else if (age >= 30 & age <= 39)
+                {
+                    if (aerobic_capacity >= 46)
+                    {
+                        rating = "Excellent";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity >= 36 & aerobic_capacity <= 45)
+                    {
+                        rating = "Good";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity >= 30 & aerobic_capacity <= 35)
+                    {
+                        rating = "Average";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity >= 25 & aerobic_capacity <= 29)
+                    {
+                        rating = "Below Average";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity < 25)
+                    {
+                        rating = "Poor";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                }
+
+                else if (age >= 40 & age <= 49)
+                {
+                    if (aerobic_capacity >= 43)
+                    {
+                        rating = "Excellent";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity >= 34 & aerobic_capacity <= 42)
+                    {
+                        rating = "Good";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity >= 25 & aerobic_capacity <= 33)
+                    {
+                        rating = "Average";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity >= 22 & aerobic_capacity <= 27)
+                    {
+                        rating = "Below Average";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity < 22)
+                    {
+                        rating = "Poor";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                }
+
+                else if (age >= 50 & age <= 59)
+                {
+                    if (aerobic_capacity >= 41)
+                    {
+                        rating = "Excellent";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity >= 33 & aerobic_capacity <= 40)
+                    {
+                        rating = "Good";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity >= 26 & aerobic_capacity <= 32)
+                    {
+                        rating = "Average";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity >= 21 & aerobic_capacity <= 25)
+                    {
+                        rating = "Below Average";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity < 21)
+                    {
+                        rating = "Poor";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                }
+
+                else if (age >= 60 & age <= 65)
+                {
+                    if (aerobic_capacity >= 39)
+                    {
+                        rating = "Excellent";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity >= 31 & aerobic_capacity <= 38)
+                    {
+                        rating = "Good";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity >= 24 & aerobic_capacity <= 30)
+                    {
+                        rating = "Average";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity >= 19 & aerobic_capacity <= 23)
+                    {
+                        rating = "Below Average";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                    else if (aerobic_capacity < 19)
+                    {
+                        rating = "Poor";
+                        lblRating.Text = "Fitness Rating :  " + rating;
+                    }
+                }
+
+                else
+                {
+                    rating = "/";
+                    lblRating.Text = "Fitness Rating :  " + rating;
+                }
+            }
+        }
     }
 }
