@@ -33,6 +33,8 @@ namespace StepTestApp
         private float m;
         private float Xmean;
         private float Ymean;
+        private float XmultY;
+        private float Xsquared;
         private float b;
 
         private List<float> ListValues = new List<float>();
@@ -246,14 +248,15 @@ namespace StepTestApp
 
         private void button1_Click(object sender, EventArgs e)
         {
+            getValueXAxis();
+            getValuesList();
+
             if ((txtBoxAge.Text == "" | txtBoxName.Text == "" | getStepHeight() == "") | (!radioButtonFemale.Checked & !radioButtonMale.Checked))
             {
-                MessageBox.Show("Please fill in all fields", "Empty Box", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please fill in all fields", getM().ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                getValueXAxis();
-                getValuesList();
                 chartDataStep.Titles.Add("Results of the test");
                 chartDataStep.ChartAreas["ChartArea1"].AxisY.Title = @"Heart Rate (b/min)";
                 chartDataStep.ChartAreas["ChartArea1"].AxisX.Title = @"Aerobic Capcaity (mls02/kg/min)";
@@ -261,7 +264,7 @@ namespace StepTestApp
                 chartDataStep.Series["Heart Rate"].Color = Color.Aquamarine;
                 chartDataStep.Series["Heart Rate"].BorderWidth = 3;
 
-                for (int i = 0; i < n ; i++)
+                for (int i = 0; i < ListValues.Count; i++)
                 {
                     chartDataStep.Series["Heart Rate"].Points.AddXY(ListXaxis[i], ListValues[i] );
                 }
@@ -283,14 +286,39 @@ namespace StepTestApp
         
         private float getXmean()
         {
-            Xmean = (x1 + x2 + x3 + x4 + x5);
+            var sumX = ListXaxis.Sum(x => x);
+            Xmean = sumX / ListXaxis.Count;
             return Xmean;
         }
 
         private float getYmean()
         {
-            Ymean = (lvl1 + lvl2 + lvl3 + lvl4 + lvl5) / 5;
+            var sumHr = ListValues.Sum(x => x);
+            Ymean = (float)(sumHr / ListValues.Count);
             return Ymean;
+        }
+
+        private float getXmultipliateY()
+        {
+            XmultY = 0;
+            for (int i = 0; i < ListValues.Count; i++)
+            {
+                float mult = ListValues[i] * ListXaxis[i];
+                XmultY += mult;
+            }
+            return XmultY;
+        }
+
+        private float getSumXsqaured()
+        {
+            Xsquared = (float)ListXaxis.Sum(x => Math.Pow(x, 2));
+            return Xsquared;
+        }
+
+        private float getM ()
+        {
+            m = (float)((getXmultipliateY() - (ListValues.Sum(x => x)*ListXaxis.Sum(x => x) / ListValues.Count)) / (getSumXsqaured() - (Math.Pow(ListXaxis.Sum(x => x),2)/ListValues.Count)));
+            return m;
         }
 
         private void getValueXAxis()
@@ -336,7 +364,6 @@ namespace StepTestApp
                 ListValues.Add(lvl1);
                 ListXaxis.Add(x1);
                 txtBoxLvl1.ForeColor = Color.Green;
-                n += 1;
             }
             else if (lvl1 < 0.50 * MaxHr)
             {
@@ -352,7 +379,6 @@ namespace StepTestApp
                 ListValues.Add(lvl2);
                 ListXaxis.Add(x2);
                 txtBoxLvl2.ForeColor = Color.Green;
-                n += 1;
             }
             else if (lvl2 < 0.50 * MaxHr)
             {
@@ -368,7 +394,6 @@ namespace StepTestApp
                 ListValues.Add(lvl3);
                 ListXaxis.Add(x3);
                 txtBoxLvl3.ForeColor = Color.Green;
-                n += 1;
             }
             else if (lvl3 < 0.50 * MaxHr)
             {
@@ -384,7 +409,6 @@ namespace StepTestApp
                 ListValues.Add(lvl4);
                 ListXaxis.Add(x4);
                 txtBoxLvl4.ForeColor = Color.Green;
-                n += 1;
             }
             else if (lvl4 < 0.50 * MaxHr)
             {
@@ -400,7 +424,6 @@ namespace StepTestApp
                 ListValues.Add(lvl5);
                 ListXaxis.Add(x5);
                 txtBoxLvl5.ForeColor = Color.Green;
-                n += 1;
             }
             else if (lvl5 < 0.50 * MaxHr)
             {
