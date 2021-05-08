@@ -35,12 +35,11 @@ namespace StepTestApp
         private float Ymean;
         private float XmultY;
         private float Xsquared;
-        private float b;
 
         private List<float> ListValues = new List<float>();
         private List<float> ListXaxis = new List<float>();
 
-        private int n = 0;
+        private float aerobic_capacity;
 
         public Form1()
         {
@@ -259,7 +258,8 @@ namespace StepTestApp
             {
                 chartDataStep.Titles.Add("Results of the test");
                 chartDataStep.ChartAreas["ChartArea1"].AxisY.Title = @"Heart Rate (b/min)";
-                chartDataStep.ChartAreas["ChartArea1"].AxisX.Title = @"Aerobic Capcaity (mls02/kg/min)";
+                chartDataStep.ChartAreas["ChartArea1"].AxisX.Title = @"Aerobic Capacity (mls02/kg/min)";
+                
                 chartDataStep.Series["Heart Rate"].ChartType = SeriesChartType.Line;
                 chartDataStep.Series["Heart Rate"].Color = Color.Aquamarine;
                 chartDataStep.Series["Heart Rate"].BorderWidth = 3;
@@ -269,11 +269,32 @@ namespace StepTestApp
                     chartDataStep.Series["Heart Rate"].Points.AddXY(ListXaxis[i], ListValues[i] );
                 }
 
+                chartDataStep.Series.Add("Average");
+                chartDataStep.Series["Average"].ChartType = SeriesChartType.Line;
+                chartDataStep.Series["Average"].Color = Color.Red;
+                chartDataStep.Series["Average"].BorderWidth = 3;
+                chartDataStep.Series["Average"].Points.AddXY(0, getOrdinateOrigin());
+                chartDataStep.Series["Average"].Points.AddXY(getAerobicCapacity(), MaxHr);
+
+                /*chartDataStep.Series.Add("Aerobic Capacity");
+                chartDataStep.Series["Aerobic Capacity"].ChartType = SeriesChartType.Line;
+                chartDataStep.Series["Aerobic Capacity"].Color = Color.Blue;
+                chartDataStep.Series["Aerobic Capacity"].Points.AddXY(getAerobicCapacity(), 0);
+                chartDataStep.Series["Aerobic Capacity"].Points.AddXY(getAerobicCapacity(), MaxHr);*/
+
                 btnValidate.Enabled = false;
+
+                lblAerobicCapacity.Text = "Aerobic capacity :  " + getAerobicCapacity().ToString() + "  mls02/kg/min";
             }
         }
 
         private void chartDataStep_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void lblAerobicCapacity_Click(object sender, EventArgs e)
         {
 
         }
@@ -319,6 +340,18 @@ namespace StepTestApp
         {
             m = (float)((getXmultipliateY() - (ListValues.Sum(x => x)*ListXaxis.Sum(x => x) / ListValues.Count)) / (getSumXsqaured() - (Math.Pow(ListXaxis.Sum(x => x),2)/ListValues.Count)));
             return m;
+        }
+
+        private float getOrdinateOrigin()
+        {
+            float origin = getYmean() - getM() * getXmean();
+            return origin;
+        }
+
+        private float getAerobicCapacity()
+        {
+            aerobic_capacity = (float)( (MaxHr - getOrdinateOrigin()) / getM() );
+            return aerobic_capacity;
         }
 
         private void getValueXAxis()
@@ -434,5 +467,6 @@ namespace StepTestApp
                 txtBoxLvl5.ForeColor = Color.Blue;
             }
         }
+
     }
 }

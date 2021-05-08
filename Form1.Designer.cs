@@ -63,7 +63,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.btnValidate = new System.Windows.Forms.Button();
             this.chartDataStep = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
+            this.lblAerobicCapacity = new System.Windows.Forms.Label();
             this.grpBoxGender.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartDataStep)).BeginInit();
             this.SuspendLayout();
@@ -395,12 +395,24 @@
             this.chartDataStep.Titles.Add(title1);
             this.chartDataStep.Click += new System.EventHandler(this.chartDataStep_Click);
             // 
+            // lblAerobicCapacity
+            // 
+            this.lblAerobicCapacity.AutoSize = true;
+            this.lblAerobicCapacity.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAerobicCapacity.Location = new System.Drawing.Point(215, 641);
+            this.lblAerobicCapacity.Name = "lblAerobicCapacity";
+            this.lblAerobicCapacity.Size = new System.Drawing.Size(13, 19);
+            this.lblAerobicCapacity.TabIndex = 29;
+            this.lblAerobicCapacity.Text = " ";
+            this.lblAerobicCapacity.Click += new System.EventHandler(this.lblAerobicCapacity_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1100, 717);
+            this.Controls.Add(this.lblAerobicCapacity);
             this.Controls.Add(this.chartDataStep);
             this.Controls.Add(this.btnValidate);
             this.Controls.Add(this.txtBoxLvl5);
@@ -474,7 +486,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btnValidate;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartDataStep;
-        private System.DirectoryServices.DirectoryEntry directoryEntry1;
+        private System.Windows.Forms.Label lblAerobicCapacity;
     }
 }
 
