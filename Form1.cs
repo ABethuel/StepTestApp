@@ -253,7 +253,9 @@ namespace StepTestApp
 
             if ((txtBoxAge.Text == "" | txtBoxName.Text == "" | getStepHeight() == "") | (!radioButtonFemale.Checked & !radioButtonMale.Checked))
             {
-                MessageBox.Show("Please fill in all fields", getM().ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please fill in all fields", "Empty Box", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ListValues.Clear();
+                ListXaxis.Clear();
             }
             else
             {
@@ -262,7 +264,7 @@ namespace StepTestApp
                 chartDataStep.ChartAreas["ChartArea1"].AxisX.Title = @"Aerobic Capacity (mls02/kg/min)";
                 
                 chartDataStep.Series["Heart Rate"].ChartType = SeriesChartType.Line;
-                chartDataStep.Series["Heart Rate"].Color = Color.Aquamarine;
+                chartDataStep.Series["Heart Rate"].Color = Color.DarkBlue;
                 chartDataStep.Series["Heart Rate"].BorderWidth = 3;
 
                 for (int i = 0; i < ListValues.Count; i++)
@@ -389,6 +391,11 @@ namespace StepTestApp
                 x3 = 27;
                 x4 = 32;
                 x5 = 37;
+            }
+            else
+            {
+                MessageBox.Show("Please enter a correct step height", "Incorrect step height", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                comboBoxHeight.Text = " ";
             }
         }
 
