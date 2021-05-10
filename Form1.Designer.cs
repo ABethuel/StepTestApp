@@ -31,6 +31,7 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -65,6 +66,7 @@
             this.chartDataStep = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.lblAerobicCapacity = new System.Windows.Forms.Label();
             this.lblRating = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
             this.grpBoxGender.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartDataStep)).BeginInit();
             this.SuspendLayout();
@@ -388,7 +390,11 @@
             series1.LabelForeColor = System.Drawing.Color.Bisque;
             series1.Legend = "Legend1";
             series1.Name = "Heart Rate";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Average";
             this.chartDataStep.Series.Add(series1);
+            this.chartDataStep.Series.Add(series2);
             this.chartDataStep.Size = new System.Drawing.Size(681, 384);
             this.chartDataStep.TabIndex = 28;
             this.chartDataStep.Text = "Yes";
@@ -417,12 +423,26 @@
             this.lblRating.TabIndex = 30;
             this.lblRating.Text = " ";
             // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnSave.Enabled = false;
+            this.btnSave.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(772, 652);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(128, 30);
+            this.btnSave.TabIndex = 31;
+            this.btnSave.Text = "Save Data";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1100, 717);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblRating);
             this.Controls.Add(this.lblAerobicCapacity);
             this.Controls.Add(this.chartDataStep);
@@ -500,6 +520,7 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chartDataStep;
         private System.Windows.Forms.Label lblAerobicCapacity;
         private System.Windows.Forms.Label lblRating;
+        private System.Windows.Forms.Button btnSave;
     }
 }
 

@@ -270,7 +270,6 @@ namespace StepTestApp
                     chartDataStep.Series["Heart Rate"].Points.AddXY(ListXaxis[i], ListValues[i] );
                 }
 
-                chartDataStep.Series.Add("Average");
                 chartDataStep.Series["Average"].ChartType = SeriesChartType.Line;
                 chartDataStep.Series["Average"].Color = Color.Red;
                 chartDataStep.Series["Average"].BorderWidth = 3;
@@ -284,6 +283,7 @@ namespace StepTestApp
                 chartDataStep.Series["Aerobic Capacity"].Points.AddXY(getAerobicCapacity(), MaxHr);*/
 
                 btnValidate.Enabled = false;
+                btnSave.Enabled = true;
 
                 lblAerobicCapacity.Text = "Aerobic capacity :   " + getAerobicCapacity().ToString() + "  mls02/kg/min";
                 getRating();
@@ -837,6 +837,27 @@ namespace StepTestApp
                     lblRating.Text = "Fitness Rating :  " + rating;
                 }
             }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            chartDataStep.Series["Heart Rate"].Points.Clear();
+            chartDataStep.Series["Average"].Points.Clear();
+            
+            txtBoxLvl1.Text = "";
+            txtBoxLvl2.Text = "";
+            txtBoxLvl3.Text = "";
+            txtBoxLvl4.Text = "";
+            txtBoxLvl5.Text = "";
+
+            lblAerobicCapacity.Text = "";
+            lblRating.Text = "";
+
+            ListValues.Clear();
+            ListXaxis.Clear();
+
+            btnValidate.Enabled = true;
+            btnSave.Enabled = false;
         }
     }
 }
