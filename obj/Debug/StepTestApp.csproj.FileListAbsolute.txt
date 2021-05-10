@@ -8,3 +8,5 @@ C:\Users\adrie\OneDrive - ISEP\Cours\I2\S2 GLYNDWR\Applied programming\Assignmen
 C:\Users\adrie\OneDrive - ISEP\Cours\I2\S2 GLYNDWR\Applied programming\Assignment 2\StepTestApp\obj\Debug\StepTestApp.exe
 C:\Users\adrie\OneDrive - ISEP\Cours\I2\S2 GLYNDWR\Applied programming\Assignment 2\StepTestApp\obj\Debug\StepTestApp.pdb
 C:\Users\adrie\OneDrive - ISEP\Cours\I2\S2 GLYNDWR\Applied programming\Assignment 2\StepTestApp\obj\Debug\StepTestApp.Form1.resources
+C:\Users\adrie\OneDrive - ISEP\Cours\I2\S2 GLYNDWR\Applied programming\Assignment 2\StepTestApp\bin\Debug\DatabaseStepTest.mdf
+C:\Users\adrie\OneDrive - ISEP\Cours\I2\S2 GLYNDWR\Applied programming\Assignment 2\StepTestApp\bin\Debug\DatabaseStepTest_log.ldf

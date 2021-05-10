@@ -13,6 +13,7 @@ namespace StepTestApp
 {
     public partial class Form1 : Form
     {
+        private string name;
         private float age;
         private double MaxHr;
         private double Hr;
@@ -301,6 +302,12 @@ namespace StepTestApp
         private void lblAerobicCapacity_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private string getName()
+        {
+            name = txtBoxName.Text;
+            return name;
         }
 
         private string getStepHeight()
