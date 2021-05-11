@@ -18,6 +18,8 @@ namespace StepTestApp
         private double MaxHr;
         private double Hr;
         private string stepHeight;
+        private string date;
+        private string gender;
 
         private float lvl1;
         private float lvl2;
@@ -47,6 +49,12 @@ namespace StepTestApp
         {
             InitializeComponent();
         }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -293,11 +301,55 @@ namespace StepTestApp
             }
         }
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            getGender();
+
+            DbEntities db = new DbEntities();
+            StepTest stepTest = new StepTest();
+
+            stepTest.Name = getName();
+            stepTest.Age = age;
+            stepTest.Gender = gender;
+            stepTest.Step_Height = getStepHeight();
+            stepTest.Aerobic_Capacity = aerobic_capacity;
+            stepTest.Rating = rating;
+            stepTest.Date = getDate();
+
+            db.StepTests.Add(stepTest);
+            db.SaveChanges();
+
+            chartDataStep.Series["Heart Rate"].Points.Clear();
+            chartDataStep.Series["Average"].Points.Clear();
+
+            txtBoxLvl1.Text = "";
+            txtBoxLvl2.Text = "";
+            txtBoxLvl3.Text = "";
+            txtBoxLvl4.Text = "";
+            txtBoxLvl5.Text = "";
+
+            lblAerobicCapacity.Text = "";
+            lblRating.Text = "";
+
+            ListValues.Clear();
+            ListXaxis.Clear();
+
+            btnValidate.Enabled = true;
+            btnSave.Enabled = false;
+        }
+
+        private void btnDatabase_Click(object sender, EventArgs e)
+        {
+            Form form2 = new Form2();
+            this.Hide();
+            form2.Show();
+        }
+
+
         private void chartDataStep_Click(object sender, EventArgs e)
         {
 
         }
-
 
         private void lblAerobicCapacity_Click(object sender, EventArgs e)
         {
@@ -314,6 +366,24 @@ namespace StepTestApp
         {
             stepHeight = comboBoxHeight.Text;
             return stepHeight;
+        }
+
+        private string getDate()
+        {
+            date = dateTimePicker1.Value.ToString();
+            return date;
+        }
+
+        private void getGender()
+        {
+            if (radioButtonMale.Checked)
+            {
+                gender = "Male";
+            }
+            else if (radioButtonFemale.Checked)
+            {
+                gender = "Female";
+            }
         }
         
         private float getXmean()
@@ -853,25 +923,5 @@ namespace StepTestApp
             }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            chartDataStep.Series["Heart Rate"].Points.Clear();
-            chartDataStep.Series["Average"].Points.Clear();
-            
-            txtBoxLvl1.Text = "";
-            txtBoxLvl2.Text = "";
-            txtBoxLvl3.Text = "";
-            txtBoxLvl4.Text = "";
-            txtBoxLvl5.Text = "";
-
-            lblAerobicCapacity.Text = "";
-            lblRating.Text = "";
-
-            ListValues.Clear();
-            ListXaxis.Clear();
-
-            btnValidate.Enabled = true;
-            btnSave.Enabled = false;
-        }
     }
 }

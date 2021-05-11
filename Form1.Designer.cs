@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBoxName = new System.Windows.Forms.TextBox();
@@ -67,6 +67,7 @@
             this.lblAerobicCapacity = new System.Windows.Forms.Label();
             this.lblRating = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
+            this.btnDatabase = new System.Windows.Forms.Button();
             this.grpBoxGender.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartDataStep)).BeginInit();
             this.SuspendLayout();
@@ -75,7 +76,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(74, 9);
+            this.label1.Location = new System.Drawing.Point(358, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(394, 23);
             this.label1.TabIndex = 0;
@@ -377,29 +378,29 @@
             // 
             // chartDataStep
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartDataStep.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartDataStep.Legends.Add(legend2);
+            chartArea6.Name = "ChartArea1";
+            this.chartDataStep.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chartDataStep.Legends.Add(legend6);
             this.chartDataStep.Location = new System.Drawing.Point(219, 241);
             this.chartDataStep.Name = "chartDataStep";
-            series3.ChartArea = "ChartArea1";
-            series3.IsValueShownAsLabel = true;
-            series3.LabelBackColor = System.Drawing.SystemColors.ActiveBorder;
-            series3.LabelBorderColor = System.Drawing.SystemColors.ActiveBorder;
-            series3.LabelForeColor = System.Drawing.Color.Bisque;
-            series3.Legend = "Legend1";
-            series3.Name = "Heart Rate";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Average";
-            this.chartDataStep.Series.Add(series3);
-            this.chartDataStep.Series.Add(series4);
+            series11.ChartArea = "ChartArea1";
+            series11.IsValueShownAsLabel = true;
+            series11.LabelBackColor = System.Drawing.SystemColors.ActiveBorder;
+            series11.LabelBorderColor = System.Drawing.SystemColors.ActiveBorder;
+            series11.LabelForeColor = System.Drawing.Color.Bisque;
+            series11.Legend = "Legend1";
+            series11.Name = "Heart Rate";
+            series12.ChartArea = "ChartArea1";
+            series12.Legend = "Legend1";
+            series12.Name = "Average";
+            this.chartDataStep.Series.Add(series11);
+            this.chartDataStep.Series.Add(series12);
             this.chartDataStep.Size = new System.Drawing.Size(681, 384);
             this.chartDataStep.TabIndex = 28;
             this.chartDataStep.Text = "Yes";
-            title2.Name = "Results of the test";
-            this.chartDataStep.Titles.Add(title2);
+            title6.Name = "Results of the test";
+            this.chartDataStep.Titles.Add(title6);
             this.chartDataStep.Click += new System.EventHandler(this.chartDataStep_Click);
             // 
             // lblAerobicCapacity
@@ -428,13 +429,25 @@
             this.btnSave.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnSave.Enabled = false;
             this.btnSave.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(772, 652);
+            this.btnSave.Location = new System.Drawing.Point(735, 641);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(128, 30);
+            this.btnSave.Size = new System.Drawing.Size(165, 30);
             this.btnSave.TabIndex = 31;
             this.btnSave.Text = "Save Data";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnDatabase
+            // 
+            this.btnDatabase.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnDatabase.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDatabase.Location = new System.Drawing.Point(735, 675);
+            this.btnDatabase.Name = "btnDatabase";
+            this.btnDatabase.Size = new System.Drawing.Size(165, 30);
+            this.btnDatabase.TabIndex = 32;
+            this.btnDatabase.Text = "Consult Database";
+            this.btnDatabase.UseVisualStyleBackColor = false;
+            this.btnDatabase.Click += new System.EventHandler(this.btnDatabase_Click);
             // 
             // Form1
             // 
@@ -442,6 +455,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1100, 717);
+            this.Controls.Add(this.btnDatabase);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblRating);
             this.Controls.Add(this.lblAerobicCapacity);
@@ -476,6 +490,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.grpBoxGender.ResumeLayout(false);
             this.grpBoxGender.PerformLayout();
@@ -521,6 +536,7 @@
         private System.Windows.Forms.Label lblAerobicCapacity;
         private System.Windows.Forms.Label lblRating;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnDatabase;
     }
 }
 
