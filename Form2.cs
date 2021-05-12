@@ -35,5 +35,23 @@ namespace StepTestApp
             form1.Show();
         }
 
+        private void txtBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            DbEntities db = new DbEntities();
+            string search = txtBoxSearch.Text;
+
+            List<StepTest> stepTestList = db.StepTests.Where(c => c.Name.ToUpper().Contains(search)).ToList();
+            populateGrid(stepTestList);
+
+            List<StepTest> age = db.StepTests.Where(c => c.Age.ToString().ToUpper().Contains(search)).ToList();
+            populateGrid(age);
+        }
+
+        private void populateGrid(List<StepTest> list)
+        {
+            dataGridView1.DataSource = list;
+        }
+
+       
     }
 }

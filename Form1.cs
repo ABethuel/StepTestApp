@@ -565,17 +565,17 @@ namespace StepTestApp
                         rating = "Excellent";
                         lblRating.Text = "Fitness Rating :  " + rating;
                     }
-                    else if (aerobic_capacity >= 48 & aerobic_capacity <= 59)
+                    else if (aerobic_capacity >= 48 & aerobic_capacity < 60)
                     {
                         rating = "Good";
                         lblRating.Text = "Fitness Rating :  " + rating;
                     }
-                    else if (aerobic_capacity >= 39 &  aerobic_capacity <= 47)
+                    else if (aerobic_capacity >= 39 &  aerobic_capacity < 48)
                     {
                         rating = "Average";
                         lblRating.Text = "Fitness Rating :  " + rating;
                     }
-                    else if (aerobic_capacity >= 30 & aerobic_capacity <= 38)
+                    else if (aerobic_capacity >= 30 & aerobic_capacity < 39)
                     {
                         rating = "Below Average";
                         lblRating.Text = "Fitness Rating :  " + rating;
@@ -594,17 +594,17 @@ namespace StepTestApp
                         rating = "Excellent";
                         lblRating.Text = "Fitness Rating :  " + rating;
                     }
-                    else if (aerobic_capacity >= 44 & aerobic_capacity <= 54)
+                    else if (aerobic_capacity >= 44 & aerobic_capacity < 50)
                     {
                         rating = "Good";
                         lblRating.Text = "Fitness Rating :  " + rating;
                     }
-                    else if (aerobic_capacity >= 35 & aerobic_capacity <= 43)
+                    else if (aerobic_capacity >= 35 & aerobic_capacity < 44)
                     {
                         rating = "Average";
                         lblRating.Text = "Fitness Rating :  " + rating;
                     }
-                    else if (aerobic_capacity >= 28 & aerobic_capacity <= 34)
+                    else if (aerobic_capacity >= 28 & aerobic_capacity < 35)
                     {
                         rating = "Below Average";
                         lblRating.Text = "Fitness Rating :  " + rating;
@@ -623,17 +623,17 @@ namespace StepTestApp
                         rating = "Excellent";
                         lblRating.Text = "Fitness Rating :  " + rating;
                     }
-                    else if (aerobic_capacity >= 40 & aerobic_capacity <= 49)
+                    else if (aerobic_capacity >= 40 & aerobic_capacity < 50)
                     {
                         rating = "Good";
                         lblRating.Text = "Fitness Rating :  " + rating;
                     }
-                    else if (aerobic_capacity >= 34 & aerobic_capacity <= 39)
+                    else if (aerobic_capacity >= 34 & aerobic_capacity < 40)
                     {
                         rating = "Average";
                         lblRating.Text = "Fitness Rating :  " + rating;
                     }
-                    else if (aerobic_capacity >= 26 & aerobic_capacity <= 33)
+                    else if (aerobic_capacity >= 26 & aerobic_capacity < 34)
                     {
                         rating = "Below Average";
                         lblRating.Text = "Fitness Rating :  " + rating;
@@ -652,17 +652,17 @@ namespace StepTestApp
                         rating = "Excellent";
                         lblRating.Text = "Fitness Rating :  " + rating;
                     }
-                    else if (aerobic_capacity >= 37 & aerobic_capacity <= 45)
+                    else if (aerobic_capacity >= 37 & aerobic_capacity < 46)
                     {
                         rating = "Good";
                         lblRating.Text = "Fitness Rating :  " + rating;
                     }
-                    else if (aerobic_capacity >= 32 & aerobic_capacity <= 36)
+                    else if (aerobic_capacity >= 32 & aerobic_capacity < 37)
                     {
                         rating = "Average";
                         lblRating.Text = "Fitness Rating :  " + rating;
                     }
-                    else if (aerobic_capacity >= 25 & aerobic_capacity <= 31)
+                    else if (aerobic_capacity >= 25 & aerobic_capacity < 32)
                     {
                         rating = "Below Average";
                         lblRating.Text = "Fitness Rating :  " + rating;
@@ -681,17 +681,17 @@ namespace StepTestApp
                         rating = "Excellent";
                         lblRating.Text = "Fitness Rating :  " + rating;
                     }
-                    else if (aerobic_capacity >= 35 & aerobic_capacity <= 43)
+                    else if (aerobic_capacity >= 35 & aerobic_capacity < 44)
                     {
                         rating = "Good";
                         lblRating.Text = "Fitness Rating :  " + rating;
                     }
-                    else if (aerobic_capacity >= 29 & aerobic_capacity <= 34)
+                    else if (aerobic_capacity >= 29 & aerobic_capacity < 35)
                     {
                         rating = "Average";
                         lblRating.Text = "Fitness Rating :  " + rating;
                     }
-                    else if (aerobic_capacity >= 23 & aerobic_capacity <= 28)
+                    else if (aerobic_capacity >= 23 & aerobic_capacity < 29)
                     {
                         rating = "Below Average";
                         lblRating.Text = "Fitness Rating :  " + rating;
@@ -710,17 +710,17 @@ namespace StepTestApp
                         rating = "Excellent";
                         lblRating.Text = "Fitness Rating :  " + rating;
                     }
-                    else if (aerobic_capacity >= 33 & aerobic_capacity <= 39)
+                    else if (aerobic_capacity >= 33 & aerobic_capacity < 40)
                     {
                         rating = "Good";
                         lblRating.Text = "Fitness Rating :  " + rating;
                     }
-                    else if (aerobic_capacity >= 25 & aerobic_capacity <= 32)
+                    else if (aerobic_capacity >= 25 & aerobic_capacity < 33)
                     {
                         rating = "Average";
                         lblRating.Text = "Fitness Rating :  " + rating;
                     }
-                    else if (aerobic_capacity >= 20 & aerobic_capacity <= 24)
+                    else if (aerobic_capacity >= 20 & aerobic_capacity < 25)
                     {
                         rating = "Below Average";
                         lblRating.Text = "Fitness Rating :  " + rating;
@@ -748,17 +748,17 @@ namespace StepTestApp
                         rating = "Excellent";
                         lblRating.Text = "Fitness Rating :  " + rating;
                     }
-                    else if (aerobic_capacity >= 44 & aerobic_capacity <= 54)
+                    else if (aerobic_capacity >= 44 & aerobic_capacity < 55)
                     {
                         rating = "Good";
                         lblRating.Text = "Fitness Rating :  " + rating;
                     }
-                    else if (aerobic_capacity >= 36 & aerobic_capacity <= 43)
+                    else if (aerobic_capacity >= 36 & aerobic_capacity < 44)
                     {
                         rating = "Average";
                         lblRating.Text = "Fitness Rating :  " + rating;
                     }
-                    else if (aerobic_capacity >= 29 & aerobic_capacity <= 35)
+                    else if (aerobic_capacity >= 29 & aerobic_capacity < 36)
                     {
                         rating = "Below Average";
                         lblRating.Text = "Fitness Rating :  " + rating;
@@ -777,17 +777,17 @@ namespace StepTestApp
                         rating = "Excellent";
                         lblRating.Text = "Fitness Rating :  " + rating;
                     }
-                    else if (aerobic_capacity >= 40 & aerobic_capacity <= 49)
+                    else if (aerobic_capacity >= 40 & aerobic_capacity < 50)
                     {
                         rating = "Good";
                         lblRating.Text = "Fitness Rating :  " + rating;
                     }
-                    else if (aerobic_capacity >= 32 & aerobic_capacity <= 39)
+                    else if (aerobic_capacity >= 32 & aerobic_capacity < 40)
                     {
                         rating = "Average";
                         lblRating.Text = "Fitness Rating :  " + rating;
                     }
-                    else if (aerobic_capacity >= 27 & aerobic_capacity <= 31)
+                    else if (aerobic_capacity >= 27 & aerobic_capacity < 32)
                     {
                         rating = "Below Average";
                         lblRating.Text = "Fitness Rating :  " + rating;
