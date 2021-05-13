@@ -25,7 +25,6 @@ namespace StepTestApp
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -49,6 +48,18 @@ namespace StepTestApp
             dataGridView1.DataSource = list;
         }
 
-       
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DbEntities db = new DbEntities();
+            var records = from m in db.StepTests
+                          select m;
+            foreach (var record in records)
+            {
+                db.StepTests.Remove(record);
+            }
+            db.SaveChanges();
+            dataGridView1.DataSource = db.StepTests.ToList();
+
+        }
     }
 }

@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.comboBoxHeight = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -267,33 +267,33 @@
             // chartDataStep
             // 
             this.chartDataStep.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            chartArea3.Name = "ChartArea1";
-            this.chartDataStep.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartDataStep.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.chartDataStep.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartDataStep.Legends.Add(legend1);
             this.chartDataStep.Location = new System.Drawing.Point(178, 232);
             this.chartDataStep.Name = "chartDataStep";
-            series7.ChartArea = "ChartArea1";
-            series7.IsValueShownAsLabel = true;
-            series7.LabelBackColor = System.Drawing.SystemColors.ActiveBorder;
-            series7.LabelBorderColor = System.Drawing.SystemColors.ActiveBorder;
-            series7.LabelForeColor = System.Drawing.Color.Bisque;
-            series7.Legend = "Legend1";
-            series7.Name = "Heart Rate";
-            series8.ChartArea = "ChartArea1";
-            series8.Legend = "Legend1";
-            series8.Name = "Average";
-            series9.ChartArea = "ChartArea1";
-            series9.Legend = "Legend1";
-            series9.Name = "Aerobic Capacity";
-            this.chartDataStep.Series.Add(series7);
-            this.chartDataStep.Series.Add(series8);
-            this.chartDataStep.Series.Add(series9);
+            series1.ChartArea = "ChartArea1";
+            series1.IsValueShownAsLabel = true;
+            series1.LabelBackColor = System.Drawing.SystemColors.ActiveBorder;
+            series1.LabelBorderColor = System.Drawing.SystemColors.ActiveBorder;
+            series1.LabelForeColor = System.Drawing.Color.Bisque;
+            series1.Legend = "Legend1";
+            series1.Name = "Heart Rate";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Average";
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Aerobic Capacity";
+            this.chartDataStep.Series.Add(series1);
+            this.chartDataStep.Series.Add(series2);
+            this.chartDataStep.Series.Add(series3);
             this.chartDataStep.Size = new System.Drawing.Size(681, 384);
             this.chartDataStep.TabIndex = 28;
             this.chartDataStep.Text = "Yes";
-            title3.Name = "Results of the test";
-            this.chartDataStep.Titles.Add(title3);
+            title1.Name = "Results of the test";
+            this.chartDataStep.Titles.Add(title1);
             this.chartDataStep.Click += new System.EventHandler(this.chartDataStep_Click);
             // 
             // lblAerobicCapacity
@@ -341,6 +341,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(1028, 24);
             this.menuStrip1.TabIndex = 35;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // fileToolStripMenuItem1
             // 
