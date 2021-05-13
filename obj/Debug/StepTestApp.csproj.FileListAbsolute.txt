@@ -24,3 +24,6 @@ C:\Users\adrie\OneDrive - ISEP\Cours\I2\S2 GLYNDWR\Applied programming\Assignmen
 C:\Users\adrie\OneDrive - ISEP\Cours\I2\S2 GLYNDWR\Applied programming\Assignment 2\StepTestApp\bin\Debug\Model1.Designer.cs
 C:\Users\adrie\OneDrive - ISEP\Cours\I2\S2 GLYNDWR\Applied programming\Assignment 2\StepTestApp\bin\Debug\StepTest.cs
 C:\Users\adrie\OneDrive - ISEP\Cours\I2\S2 GLYNDWR\Applied programming\Assignment 2\StepTestApp\bin\Debug\Model1.edmx.diagram
+C:\Users\adrie\OneDrive - ISEP\Cours\I2\S2 GLYNDWR\Applied programming\Assignment 2\StepTestApp\obj\Debug\StepTestApp.FormHelp.resources
+C:\Users\adrie\OneDrive - ISEP\Cours\I2\S2 GLYNDWR\Applied programming\Assignment 2\StepTestApp\obj\Debug\StepTestApp.FormAbout.resources
+C:\Users\adrie\OneDrive - ISEP\Cours\I2\S2 GLYNDWR\Applied programming\Assignment 2\StepTestApp\obj\Debug\StepTestApp.FormWelcome.resources

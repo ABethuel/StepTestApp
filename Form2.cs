@@ -42,9 +42,6 @@ namespace StepTestApp
 
             List<StepTest> stepTestList = db.StepTests.Where(c => c.Name.ToUpper().Contains(search)).ToList();
             populateGrid(stepTestList);
-
-            List<StepTest> age = db.StepTests.Where(c => c.Age.ToString().ToUpper().Contains(search)).ToList();
-            populateGrid(age);
         }
 
         private void populateGrid(List<StepTest> list)

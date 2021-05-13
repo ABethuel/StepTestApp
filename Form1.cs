@@ -52,7 +52,6 @@ namespace StepTestApp
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -202,7 +201,7 @@ namespace StepTestApp
             {
                 if (txtBoxLvl3.Text == "")
                 {
-                    txtBoxLvl1.Text = "";
+                    txtBoxLvl3.Text = "";
                 }
                 else
                 {
@@ -276,28 +275,42 @@ namespace StepTestApp
                 chartDataStep.Series["Heart Rate"].Color = Color.DarkBlue;
                 chartDataStep.Series["Heart Rate"].BorderWidth = 3;
 
-                for (int i = 0; i < ListValues.Count; i++)
+                if (getM() < 0)
                 {
-                    chartDataStep.Series["Heart Rate"].Points.AddXY(ListXaxis[i], ListValues[i] );
+                    MessageBox.Show("Your Aerobic capacity is negative, there might be an error in the data you entered", "Error Value", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtBoxLvl1.Text = "";
+                    txtBoxLvl2.Text = "";
+                    txtBoxLvl3.Text = "";
+                    txtBoxLvl4.Text = "";
+                    txtBoxLvl5.Text = "";
+
+                    ListValues.Clear();
+                    ListXaxis.Clear();
                 }
+                else {
+                    for (int i = 0; i < ListValues.Count; i++)
+                    {
+                        chartDataStep.Series["Heart Rate"].Points.AddXY(ListXaxis[i], ListValues[i]);
+                    }
 
-                chartDataStep.Series["Average"].ChartType = SeriesChartType.Line;
-                chartDataStep.Series["Average"].Color = Color.Red;
-                chartDataStep.Series["Average"].BorderWidth = 3;
-                chartDataStep.Series["Average"].Points.AddXY(0, getOrdinateOrigin());
-                chartDataStep.Series["Average"].Points.AddXY(getAerobicCapacity(), MaxHr);
+                    chartDataStep.Series["Average"].ChartType = SeriesChartType.Line;
+                    chartDataStep.Series["Average"].Color = Color.Red;
+                    chartDataStep.Series["Average"].BorderWidth = 3;
+                    chartDataStep.Series["Average"].Points.AddXY(0, getOrdinateOrigin());
+                    chartDataStep.Series["Average"].Points.AddXY(getAerobicCapacity(), MaxHr);
 
-                /*chartDataStep.Series.Add("Aerobic Capacity");
-                chartDataStep.Series["Aerobic Capacity"].ChartType = SeriesChartType.Line;
-                chartDataStep.Series["Aerobic Capacity"].Color = Color.Blue;
-                chartDataStep.Series["Aerobic Capacity"].Points.AddXY(getAerobicCapacity(), 0);
-                chartDataStep.Series["Aerobic Capacity"].Points.AddXY(getAerobicCapacity(), MaxHr);*/
+                    chartDataStep.Series["Aerobic Capacity"].ChartType = SeriesChartType.Line;
+                    chartDataStep.Series["Aerobic Capacity"].Color = Color.Red;
+                    chartDataStep.Series["Aerobic Capacity"].BorderWidth = 3;
+                    chartDataStep.Series["Aerobic Capacity"].Points.AddXY(getAerobicCapacity(), 0);
+                    chartDataStep.Series["Aerobic Capacity"].Points.AddXY(getAerobicCapacity(), MaxHr);
 
-                btnValidate.Enabled = false;
-                btnSave.Enabled = true;
+                    btnValidate.Enabled = false;
+                    btnSave.Visible = true;
 
-                lblAerobicCapacity.Text = "Aerobic capacity :   " + getAerobicCapacity().ToString() + "  mls02/kg/min";
-                getRating();
+                    lblAerobicCapacity.Text = "Aerobic capacity :   " + getAerobicCapacity().ToString() + "  mls02/kg/min";
+                    getRating();
+                }              
             }
         }
 
@@ -321,6 +334,7 @@ namespace StepTestApp
 
             chartDataStep.Series["Heart Rate"].Points.Clear();
             chartDataStep.Series["Average"].Points.Clear();
+            chartDataStep.Series["Aerobic Capacity"].Points.Clear();
 
             txtBoxLvl1.Text = "";
             txtBoxLvl2.Text = "";
@@ -335,16 +349,28 @@ namespace StepTestApp
             ListXaxis.Clear();
 
             btnValidate.Enabled = true;
-            btnSave.Enabled = false;
+            btnSave.Visible = false;
         }
 
-        private void btnDatabase_Click(object sender, EventArgs e)
+        private void consultDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form form2 = new Form2();
-            this.Hide();
             form2.Show();
         }
 
+
+        private void howToUseTheAppToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form formHelp = new FormHelp();
+            formHelp.Show();
+        }
+
+
+        private void aboutTheAppToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form formAbout = new FormAbout();
+            formAbout.Show();
+        }
 
         private void chartDataStep_Click(object sender, EventArgs e)
         {
@@ -921,6 +947,11 @@ namespace StepTestApp
                     lblRating.Text = "Fitness Rating :  " + rating;
                 }
             }
+        }
+
+        private void fileToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
         }
 
     }
