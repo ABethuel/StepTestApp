@@ -76,6 +76,7 @@
             this.lblB1 = new System.Windows.Forms.Label();
             this.lblB2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.grpBoxGender.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartDataStep)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -358,6 +359,7 @@
             this.loadFileToolStripMenuItem.Name = "loadFileToolStripMenuItem";
             this.loadFileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.loadFileToolStripMenuItem.Text = "Load File";
+            this.loadFileToolStripMenuItem.Click += new System.EventHandler(this.loadFileToolStripMenuItem_Click);
             // 
             // consultDatabaseToolStripMenuItem
             // 
@@ -378,14 +380,14 @@
             // aboutTheAppToolStripMenuItem
             // 
             this.aboutTheAppToolStripMenuItem.Name = "aboutTheAppToolStripMenuItem";
-            this.aboutTheAppToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutTheAppToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.aboutTheAppToolStripMenuItem.Text = "About the app";
             this.aboutTheAppToolStripMenuItem.Click += new System.EventHandler(this.aboutTheAppToolStripMenuItem_Click);
             // 
             // howToUseTheAppToolStripMenuItem
             // 
             this.howToUseTheAppToolStripMenuItem.Name = "howToUseTheAppToolStripMenuItem";
-            this.howToUseTheAppToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.howToUseTheAppToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.howToUseTheAppToolStripMenuItem.Text = "How to use the app";
             this.howToUseTheAppToolStripMenuItem.Click += new System.EventHandler(this.howToUseTheAppToolStripMenuItem_Click);
             // 
@@ -507,6 +509,10 @@
             this.label8.TabIndex = 14;
             this.label8.Text = "Date  :";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -604,6 +610,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ToolStripMenuItem aboutTheAppToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem howToUseTheAppToolStripMenuItem;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 

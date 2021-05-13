@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,6 +53,7 @@ namespace StepTestApp
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
+            Application.Exit();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -90,7 +92,7 @@ namespace StepTestApp
                     lblMaxHR.Text = "/";
                     lblHR.Text = "/";
                     txtBoxAge.Text = "";
-                }       
+                }
             }
         }
 
@@ -270,7 +272,7 @@ namespace StepTestApp
                 chartDataStep.Titles.Add("Results of the test");
                 chartDataStep.ChartAreas["ChartArea1"].AxisY.Title = @"Heart Rate (b/min)";
                 chartDataStep.ChartAreas["ChartArea1"].AxisX.Title = @"Aerobic Capacity (mls02/kg/min)";
-                
+
                 chartDataStep.Series["Heart Rate"].ChartType = SeriesChartType.Line;
                 chartDataStep.Series["Heart Rate"].Color = Color.DarkBlue;
                 chartDataStep.Series["Heart Rate"].BorderWidth = 3;
@@ -310,7 +312,7 @@ namespace StepTestApp
 
                     lblAerobicCapacity.Text = "Aerobic capacity :   " + getAerobicCapacity().ToString() + "  mls02/kg/min";
                     getRating();
-                }              
+                }
             }
         }
 
@@ -411,7 +413,7 @@ namespace StepTestApp
                 gender = "Female";
             }
         }
-        
+
         private float getXmean()
         {
             var sumX = ListXaxis.Sum(x => x);
@@ -443,9 +445,9 @@ namespace StepTestApp
             return Xsquared;
         }
 
-        private float getM ()
+        private float getM()
         {
-            m = (float)((getXmultipliateY() - (ListValues.Sum(x => x)*ListXaxis.Sum(x => x) / ListValues.Count)) / (getSumXsqaured() - (Math.Pow(ListXaxis.Sum(x => x),2)/ListValues.Count)));
+            m = (float)((getXmultipliateY() - (ListValues.Sum(x => x) * ListXaxis.Sum(x => x) / ListValues.Count)) / (getSumXsqaured() - (Math.Pow(ListXaxis.Sum(x => x), 2) / ListValues.Count)));
             return m;
         }
 
@@ -457,7 +459,7 @@ namespace StepTestApp
 
         private float getAerobicCapacity()
         {
-            aerobic_capacity = (float)( (MaxHr - getOrdinateOrigin()) / getM() );
+            aerobic_capacity = (float)((MaxHr - getOrdinateOrigin()) / getM());
             return aerobic_capacity;
         }
 
@@ -487,7 +489,7 @@ namespace StepTestApp
                 x4 = 28;
                 x5 = 33;
             }
-            else if (getStepHeight()== "30cm")
+            else if (getStepHeight() == "30cm")
             {
                 x1 = 16;
                 x2 = 21;
@@ -504,7 +506,7 @@ namespace StepTestApp
 
         private void getValuesList()
         {
-            if (lvl1 >= 0.50*MaxHr & lvl1 <= 0.85*MaxHr)
+            if (lvl1 >= 0.50 * MaxHr & lvl1 <= 0.85 * MaxHr)
             {
                 ListValues.Add(lvl1);
                 ListXaxis.Add(x1);
@@ -584,7 +586,7 @@ namespace StepTestApp
         {
             if (radioButtonMale.Checked)
             {
-                if (age >= 15 & age <=19)
+                if (age >= 15 & age <= 19)
                 {
                     if (aerobic_capacity >= 60)
                     {
@@ -596,7 +598,7 @@ namespace StepTestApp
                         rating = "Good";
                         lblRating.Text = "Fitness Rating :  " + rating;
                     }
-                    else if (aerobic_capacity >= 39 &  aerobic_capacity < 48)
+                    else if (aerobic_capacity >= 39 & aerobic_capacity < 48)
                     {
                         rating = "Average";
                         lblRating.Text = "Fitness Rating :  " + rating;
@@ -764,7 +766,7 @@ namespace StepTestApp
                     lblRating.Text = "Fitness Rating :  " + rating;
                 }
             }
-            
+
             if (radioButtonFemale.Checked)
             {
                 if (age >= 15 & age <= 19)
@@ -958,5 +960,57 @@ namespace StepTestApp
         {
 
         }
+
+        private void loadFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string path = openFileDialog1.FileName;
+                List<string> testList = GetInputFromFiles(path);
+                addToDb(testList);
+                DbEntities db = new DbEntities();
+
+            }
+        }
+
+        private List<string> GetInputFromFiles(string path)
+        {
+            StreamReader sr = new StreamReader(path);
+            List<string> memberlist = new List<string>();
+            while (sr.Peek() != -1)
+            {
+                memberlist.Add(sr.ReadLine());
+            }
+            sr.Close();
+            return memberlist;
+        }
+
+        private void addToDb(List<string> testList)
+        {
+            try
+            {
+                DbEntities db = new DbEntities();
+                foreach (string str in testList)
+                {
+                    string[] wordArray = str.Split(';');
+                    StepTest stepTest = new StepTest();
+                    stepTest.Name = wordArray[0].ToString();
+                    stepTest.Age = double.Parse(wordArray[1]);
+                    stepTest.Gender = wordArray[2].ToString();
+                    stepTest.Step_Height = wordArray[3].ToString();
+                    stepTest.Aerobic_Capacity = double.Parse(wordArray[4]);
+                    stepTest.Rating = wordArray[5].ToString();
+                    stepTest.Date = wordArray[6].ToString();
+                    db.StepTests.Add(stepTest);
+                }
+                db.SaveChanges();
+            }
+            catch
+            {
+                DialogResult dialog;
+                dialog = MessageBox.Show("error in the data", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+         
     }
 }
