@@ -11,7 +11,8 @@ namespace StepTestApp
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Data;
+
     public partial class StepTest
     {
         public int Id { get; set; }

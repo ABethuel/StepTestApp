@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -103,6 +104,14 @@ namespace StepTestApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            DbEntities db = new DbEntities();
+            List<StepTest> listTest = db.StepTests.ToList();
+
+            foreach (StepTest item in listTest)
+            {
+                comboBoxName.Items.Add(item.Name);
+            }
+
 
         }
 
@@ -261,7 +270,7 @@ namespace StepTestApp
             getValueXAxis();
             getValuesList();
 
-            if ((txtBoxAge.Text == "" | txtBoxName.Text == "" | getStepHeight() == "") | (!radioButtonFemale.Checked & !radioButtonMale.Checked))
+            if ((txtBoxAge.Text == "" | comboBoxName.Text == "" | getStepHeight() == "") | (!radioButtonFemale.Checked & !radioButtonMale.Checked))
             {
                 MessageBox.Show("Please fill in all fields", "Empty Box", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ListValues.Clear();
@@ -386,7 +395,7 @@ namespace StepTestApp
 
         private string getName()
         {
-            name = txtBoxName.Text;
+            name = comboBoxName.Text;
             return name;
         }
 
@@ -1011,6 +1020,34 @@ namespace StepTestApp
                 dialog = MessageBox.Show("error in the data", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-         
+
+        private void comboBoxName_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            string name = comboBoxName.Text;
+            DbEntities db = new DbEntities();
+            var items = db.StepTests.Select(item => new
+            {
+                Name = item.Name,
+                Age = item.Age,
+                Gender = item.Gender,
+                StepHeight = item.Step_Height,
+            }
+            ).ToList();
+        
+            for (int i = 0; i<1001; i++)
+            {
+                if (items[i].Name.ToString() == name)
+                {
+                    txtBoxAge.Text = items[i].Age.ToString();
+                    comboBoxHeight.Text = items[i].StepHeight.ToString();
+                    if (items[i].Gender == "Male")
+                    {
+                        radioButtonMale.Checked = true;
+                    }
+                    break;
+                }
+            }
+        }
+   
     }
 }

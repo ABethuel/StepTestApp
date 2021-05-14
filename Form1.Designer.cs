@@ -66,7 +66,6 @@
             this.howToUseTheAppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtBoxName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtBoxAge = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -77,6 +76,7 @@
             this.lblB2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.comboBoxName = new System.Windows.Forms.ComboBox();
             this.grpBoxGender.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartDataStep)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -357,14 +357,14 @@
             // loadFileToolStripMenuItem
             // 
             this.loadFileToolStripMenuItem.Name = "loadFileToolStripMenuItem";
-            this.loadFileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadFileToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.loadFileToolStripMenuItem.Text = "Load File";
             this.loadFileToolStripMenuItem.Click += new System.EventHandler(this.loadFileToolStripMenuItem_Click);
             // 
             // consultDatabaseToolStripMenuItem
             // 
             this.consultDatabaseToolStripMenuItem.Name = "consultDatabaseToolStripMenuItem";
-            this.consultDatabaseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultDatabaseToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.consultDatabaseToolStripMenuItem.Text = "Consult Database";
             this.consultDatabaseToolStripMenuItem.Click += new System.EventHandler(this.consultDatabaseToolStripMenuItem_Click);
             // 
@@ -411,14 +411,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Name : ";
             this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // txtBoxName
-            // 
-            this.txtBoxName.Font = new System.Drawing.Font("Century Gothic", 9.25F);
-            this.txtBoxName.Location = new System.Drawing.Point(93, 56);
-            this.txtBoxName.Name = "txtBoxName";
-            this.txtBoxName.Size = new System.Drawing.Size(113, 23);
-            this.txtBoxName.TabIndex = 2;
             // 
             // label3
             // 
@@ -513,12 +505,22 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // comboBoxName
+            // 
+            this.comboBoxName.FormattingEnabled = true;
+            this.comboBoxName.Location = new System.Drawing.Point(93, 58);
+            this.comboBoxName.Name = "comboBoxName";
+            this.comboBoxName.Size = new System.Drawing.Size(113, 21);
+            this.comboBoxName.TabIndex = 36;
+            this.comboBoxName.SelectedIndexChanged += new System.EventHandler(this.comboBoxName_SelectedIndexChanged_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(1028, 717);
+            this.Controls.Add(this.comboBoxName);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblRating);
@@ -549,7 +551,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtBoxAge);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtBoxName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -598,7 +599,6 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtBoxName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtBoxAge;
         private System.Windows.Forms.Label label4;
@@ -611,6 +611,7 @@
         private System.Windows.Forms.ToolStripMenuItem aboutTheAppToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem howToUseTheAppToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ComboBox comboBoxName;
     }
 }
 
