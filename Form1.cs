@@ -270,7 +270,9 @@ namespace StepTestApp
             getValueXAxis();
             getValuesList();
 
-            if ((txtBoxAge.Text == "" | comboBoxName.Text == "" | getStepHeight() == "") | (!radioButtonFemale.Checked & !radioButtonMale.Checked))
+            if ((txtBoxAge.Text == "" | comboBoxName.Text == "" | getStepHeight() == "" | txtBoxLvl1.Text == "" | txtBoxLvl2.Text == "" | 
+                txtBoxLvl3.Text == "" | txtBoxLvl4.Text == "" | txtBoxLvl5.Text == "") | 
+                (!radioButtonFemale.Checked & !radioButtonMale.Checked))
             {
                 MessageBox.Show("Please fill in all fields", "Empty Box", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ListValues.Clear();
